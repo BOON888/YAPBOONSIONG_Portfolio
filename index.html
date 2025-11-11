@@ -1,304 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ooi Dun Tzi | Portfolio</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Set up Tailwind to use the 'Inter' font
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
-    <!-- Add custom styles for a nice gradient background -->
-    <style>
-        body {
-            background-color: #111827; /* Dark gray-900 fallback */
-            background-image: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yap Boon Siong — Portfolio</title>
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-start': '#0f172a',
+            'bg-end': '#1e293b',
+            'accent-1': '#22d3ee',
+            'accent-2': '#38bdf8'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
         }
-        .skill-card, .edu-card, .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .skill-card:hover, .edu-card:hover, .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    /* small custom touches */
+    body {
+      background-image: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 55%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+    }
+    .accent-glow {
+      box-shadow: 0 6px 24px -8px rgba(56,189,248,0.18), inset 0 -1px 0 rgba(255,255,255,0.02);
+    }
+  </style>
 </head>
-<body class="text-gray-200 font-sans antialiased">
+<body class="text-gray-200 antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="bg-gray-900/70 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto max-w-6xl px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white tracking-tight">
-                Ooi Dun Tzi<span class="text-indigo-400">.</span>
-            </a>
-            <div class="hidden md:flex space-x-4 md:space-x-6">
-                <a href="#home" class="text-gray-300 hover:text-indigo-400 transition duration-300">Home</a>
-                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300">Education</a>
-                <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
-                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contact</a>
-            </div>
-            <!-- Mobile Menu Button (optional, but good for responsiveness) -->
-            <div class="md:hidden">
-                <!-- A simple menu icon, you can expand this with JS later if needed -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto max-w-6xl px-6 py-12 md:py-20">
-
-        <!-- Home/Intro Section -->
-        <section id="home" class="text-center min-h-[60vh] flex flex-col justify-center items-center">
-            <!-- Placeholder for a profile picture -->
-            <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gray-700 mb-6 flex items-center justify-center shadow-2xl overflow-hidden">
-                <!-- Image goes here -->
-                <img src="me.jpg" alt="Ooi Dun Tzi" class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
-                Ooi Dun Tzi
-            </h1>
-            <p class="text-2xl md:text-3xl font-light text-indigo-400 mb-6">
-                Computer Science Student <span class="text-gray-400">|</span> Data Analytics Specialism
-            </p>
-            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-                Driven and adaptable student at Asia Pacific University, leveraging diverse experience in leadership, retail, education, and technology.
-            </p>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                My <span class="text-indigo-400">Education</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Degree -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 edu-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-1">2025 - 2027 (Predicted)</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Bachelor of Science (Honours) in Computer Science</h3>
-                    <p class="text-md font-medium text-gray-400 mb-3">Specialism in Data Analytics</p>
-                    <p class="text-md text-gray-300">Asia Pacific University of Technology & Innovation (APU)</p>
-                </div>
-                <!-- Diploma -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 edu-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-1">2022 - 2024</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Diploma in Information & Communication Technology</h3>
-                    <p class="text-md font-medium text-gray-400 mb-3">Specialism in Software Engineering</p>
-                    <p class="text-md text-gray-300">Asia Pacific University of Technology & Innovation (APU)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                My <span class="text-indigo-400">Experience</span>
-            </h2>
-            
-            <!-- Grid for experience cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Card 1: Tech & AI Internship -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 skill-card">
-                    <p class="text-sm font-medium text-gray-400 mb-2">Aug 2024 - Dec 2024</p>
-                    <h3 class="text-xl font-bold text-indigo-400 mb-2">AI Support Intern</h3>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Iproject Management Sdn Bhd (Cikgu Samm)</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Provided client support for AI software usage and system maintenance.</li>
-                        <li>Ensured smooth client operations and system performance.</li>
-                        <li>Promoted an AI Clone System at exhibitions, enhancing client relationship skills.</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2: Education -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 skill-card">
-                    <p class="text-sm font-medium text-gray-400 mb-2">Mar 2023 - Apr 2023</p>
-                    <h3 class="text-xl font-bold text-indigo-400 mb-2">Teaching Assistant</h3>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Ke Li Er Learning Center</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Guided primary school students with patience and care.</li>
-                        <li>Adapted communication styles for effective learning.</li>
-                    </ul>
-                </div>
-                
-                <!-- Card 3: Retail Management -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 skill-card">
-                    <p class="text-sm font-medium text-gray-400 mb-2">Mar 2022 - Jun 2022</p>
-                    <h3 class="text-xl font-bold text-indigo-400 mb-2">Retail Operations</h3>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Puzzle Planet</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Independently managed end-to-end store operations.</li>
-                        <li>Handled stock control, cashiering, and customer engagement.</li>
-                        <li>Developed strong skills in responsibility and communication.</li>
-                    </ul>
-                </div>
-
-                <!-- Card 4: Leadership -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 skill-card">
-                    <p class="text-sm font-medium text-gray-400 mb-2">2020 - 2021</p>
-                    <h3 class="text-xl font-bold text-indigo-400 mb-2">Orchestra Conductor</h3>
-                    <p class="text-sm font-medium text-gray-400 mb-4">Heng Ee Secondary School</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Led and coordinated the Chinese Orchestra, managing over 100 members.</li>
-                        <li>Gained experience in managing large teams and event coordination.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                Technical <span class="text-indigo-400">Skills</span>
-            </h2>
-
-            <div class="max-w-4xl mx-auto">
-                <!-- Data & Analytics -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-300 mb-4 border-b border-indigo-400 pb-2">Data & Analytics</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">SAS Studio</span>
-                        <span class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">RStudio</span>
-                        <span class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">SQL Server</span>
-                    </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-gray-300 mb-4 border-b border-indigo-400 pb-2">Web & Programming</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">HTML</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">CSS</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">JavaScript</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">PHP</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Java</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">C++</span>
-                        <span class="bg-gray-700 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Python</span>
-                    </div>
-                </div>
-
-                <!-- Microsoft Office -->
-                <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-gray-300 mb-4 border-b border-indigo-400 pb-2">Productivity Suite</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-600 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Microsoft Word</span>
-                        <span class="bg-gray-600 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Microsoft Excel</span>
-                        <span class="bg-gray-600 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Microsoft PowerPoint</span>
-                        <span class="bg-gray-600 text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Microsoft Access</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                Key Projects & <span class="text-indigo-400">Achievements</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Degree Module</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Data Management</h3>
-                    <p class="text-gray-400">Key project/learning from the Data Management module.</p>
-                </div>
-                <!-- Project 2 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Degree Module</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Java Programming</h3>
-                    <p class="text-gray-400">Developed applications or projects using Java.</p>
-                </div>
-                <!-- Project 3 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Degree Module</p>
-                    <h3 class="text-xl font-bold text-white mb-2">System & Network Administration</h3>
-                    <p class="text-gray-400">Hands-on project in system and network configuration.</p>
-                </div>
-                <!-- Project 4 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Diploma</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Diploma Final Year Project</h3>
-                    <p class="text-gray-400">A capstone project demonstrating acquired diploma skills.</p>
-                </div>
-                <!-- Project 5 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Diploma Module</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Web Development</h3>
-                    <p class="text-gray-400">Project focused on front-end or full-stack web technologies.</p>
-                </div>
-                <!-- Project 6 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl p-6 border border-gray-700 project-card">
-                    <p class="text-sm font-medium text-indigo-400 mb-2">Diploma Module</p>
-                    <h3 class="text-xl font-bold text-white mb-2">Python</h3>
-                    <p class="text-gray-400">Project involving Python programming.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    <!-- Footer / Contact Section -->
-    <footer id="contact" class="bg-gray-900 border-t border-gray-800 mt-20">
-        <div class="container mx-auto max-w-6xl px-6 py-12">
-            <h2 class="text-2xl font-bold text-center text-white mb-8">Get In <span class="text-indigo-400">Touch</span></h2>
-            <div class="flex justify-center space-x-8">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/ooi-dun-tzi" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
-                    </svg>
-                </a>
-                <!-- Email -->
-                <a href="mailto:duntzi9@gmail.com" class="text-gray-400 hover:text-indigo-400 transition duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="text-center text-gray-400 mt-10">
-                <p>&copy; 2024 Ooi Dun Tzi. All rights reserved.</p>
-                <p class="text-sm mt-1">Built with HTML & Tailwind CSS</p>
-            </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between glass">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-1 to-accent-2 flex items-center justify-center text-black font-bold">YB</div>
+        <div>
+          <div class="text-white font-extrabold">Yap Boon Siong</div>
+          <div class="text-xs text-gray-300 -mt-0.5">Computer Science • Data Analytics</div>
         </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#about" class="text-gray-300 hover:text-accent-2 transition">About</a>
+        <a href="#education" class="text-gray-300 hover:text-accent-2 transition">Education</a>
+        <a href="#skills" class="text-gray-300 hover:text-accent-2 transition">Skills</a>
+        <a href="#projects" class="text-gray-300 hover:text-accent-2 transition">Projects</a>
+        <a href="#contact" class="text-gray-300 hover:text-accent-2 transition">Contact</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="menu-btn" aria-label="open menu" class="p-2 rounded-md glass">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- mobile nav -->
+    <div id="mobile-nav" class="hidden md:hidden max-w-6xl mx-auto px-6">
+      <div class="flex flex-col gap-3 py-3 glass rounded-b-md mt-0">
+        <a href="#about" class="text-gray-300 py-2">About</a>
+        <a href="#education" class="text-gray-300 py-2">Education</a>
+        <a href="#skills" class="text-gray-300 py-2">Skills</a>
+        <a href="#projects" class="text-gray-300 py-2">Projects</a>
+        <a href="#contact" class="text-gray-300 py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Hero / Home -->
+    <section id="home" class="min-h-[64vh] flex flex-col md:flex-row items-center gap-8">
+      <div class="w-full md:w-1/2">
+        <div class="rounded-xl overflow-hidden w-48 h-48 md:w-56 md:h-56 mx-auto md:mx-0 shadow-2xl accent-glow">
+          <!-- replace 'me.png' with your photo -->
+          <img src="me.png" alt="Yap Boon Siong" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          Yap Boon Siong
+        </h1>
+        <p class="mt-3 text-lg text-gray-300">
+          Computer Science Student — Specialisation in Data Analytics.<br>
+          Currently Degree Year 2 at Asia Pacific University (2022–2026). Passionate about data, software engineering, and building educational tech.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 justify-center md:justify-start">
+          <a href="#projects" class="inline-block px-6 py-3 rounded-md bg-gradient-to-r from-accent-1 to-accent-2 text-black font-semibold shadow-lg hover:scale-[1.01] transition">View Projects</a>
+          <a href="mailto:yapboonsiong888@gmail.com" class="inline-block px-6 py-3 rounded-md border border-gray-700 text-gray-200 hover:text-white hover:border-accent-2 transition">Email Me</a>
+        </div>
+
+        <div class="mt-6 text-gray-400">
+          <div><strong>Email:</strong> yapboonsiong888@gmail.com</div>
+          <div class="mt-1"><strong>Phone:</strong> +6012-6315915</div>
+          <div class="mt-1"><strong>Address:</strong> B1-14, Pangsapuri Sri Kesidang, Jalan Bayan, Bandar Puchong Jaya, 47100 Puchong, Selangor</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mt-16">
+      <div class="glass rounded-xl p-6 md:p-10 accent-glow">
+        <h2 class="text-2xl font-bold text-white">About Me</h2>
+        <p class="mt-3 text-gray-300 max-w-3xl">
+          I'm a focused and adaptable Computer Science student at Asia Pacific University, specialising in Data Analytics. I have hands-on experience in software engineering projects, web development and AI chatbot systems. I enjoy solving problems through code and building educational tools that help others learn.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <h4 class="text-sm text-gray-300 font-semibold">Education</h4>
+            <p class="mt-2 text-gray-200">
+              BSc (Hons) Computer Science — Data Analytics (2022–2026, Year 2)<br>
+              Diploma in ICT (Software Engineering) — APU (2022–2024)
+            </p>
+          </div>
+          <div class="p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <h4 class="text-sm text-gray-300 font-semibold">Core Strengths</h4>
+            <ul class="mt-2 text-gray-200 list-disc list-inside space-y-1">
+              <li>Data analysis & visualisation</li>
+              <li>Web & full-stack fundamentals</li>
+              <li>AI chatbot integration & user support</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <h4 class="text-sm text-gray-300 font-semibold">Languages</h4>
+            <p class="mt-2 text-gray-200">English • Chinese • Malay • Cantonese</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">Education</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-lg">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-semibold text-white">Bachelor of Science (Hons) — Computer Science Specialisation Data Analytics</h3>
+              <p class="text-sm text-gray-300 mt-1">Asia Pacific University</p>
+            </div>
+            <div class="text-sm text-accent-2 font-semibold">2022 — 2026 (Ongoing)</div>
+          </div>
+          <p class="mt-4 text-gray-300">Currently in Year 2 at Asia Pacific University of Technology & Innovation, focusing on data analytics modules, data mining and machine learning fundamentals.</p>
+        </div>
+
+        <div class="glass p-6 rounded-lg">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-semibold text-white">Diploma in ICT — Software Engineering</h3>
+              <p class="text-sm text-gray-300 mt-1">Asia Pacific University</p>
+            </div>
+            <div class="text-sm text-accent-2 font-semibold">2022 — 2024</div>
+          </div>
+          <p class="mt-4 text-gray-300">Completed diploma with practical projects in web development, programming (C++, Java, Python), and system administration basics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">Skills</h2>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-lg">
+          <h4 class="text-md font-semibold text-white">Technical</h4>
+          <div class="mt-4 space-y-3 text-gray-200">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Python</span><span>Strong</span></div>
+              <div class="w-full bg-gray-700 rounded-full h-2"><div class="h-2 rounded-full bg-accent-2" style="width:80%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>C++</span><span>Good</span></div>
+              <div class="w-full bg-gray-700 rounded-full h-2"><div class="h-2 rounded-full bg-accent-2" style="width:70%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Java / JavaScript</span><span>Good</span></div>
+              <div class="w-full bg-gray-700 rounded-full h-2"><div class="h-2 rounded-full bg-accent-2" style="width:68%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>MySQL / SQL Server</span><span>Working</span></div>
+              <div class="w-full bg-gray-700 rounded-full h-2"><div class="h-2 rounded-full bg-accent-2" style="width:62%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Web: HTML, CSS, Tailwind</span><span>Working</span></div>
+              <div class="w-full bg-gray-700 rounded-full h-2"><div class="h-2 rounded-full bg-accent-2" style="width:66%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-lg">
+          <h4 class="text-md font-semibold text-white">Tools & Soft Skills</h4>
+          <ul class="mt-4 list-disc list-inside text-gray-200 space-y-2">
+            <li>Visual Studio 2022 for application and web development</li>
+            <li>ASP.NET fundamentals for building dynamic web applications</li>
+            <li>MySQL and SQL Server for database management</li>
+            <li>RStudio, SAS Studio basics for data analysis</li>
+            <li>Microsoft Office (Word, Excel, PowerPoint, Access)</li>
+            <li>Problem-solving, analytics, and quick adaptation to new technologies</li>
+            <li>Client support experience (AI support & system maintenance)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="mt-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Experience</h2>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Experience Card -->
+        <div class="glass p-6 rounded-lg border border-gray-700">
+        <div class="flex justify-between items-start">
+            <div>
+            <h3 class="text-lg font-semibold text-white">IT Support Intern</h3>
+            <p class="text-sm text-gray-300 mt-1">IME SOLUTIONS SDN BHD</p>
+            </div>
+            <div class="text-sm text-accent-2 font-semibold">2024</div>
+        </div>
+        <ul class="mt-4 text-gray-300 list-disc list-inside space-y-2">
+            <li>Assisted in maintaining and troubleshooting computer systems, software, and networks.</li>
+            <li>Provided user support for hardware and software issues within the office environment.</li>
+            <li>Performed basic system updates, configurations, and documentation of IT procedures.</li>
+            <li>Developed a better understanding of system administration and workplace communication.</li>
+        </ul>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-white">Projects & Achievements</h2>
+      <p class="mt-2 text-gray-300 max-w-2xl">A selection of notable projects worked on during diploma and degree studies plus personal initiatives.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <article class="p-6 glass rounded-lg border border-gray-700">
+          <div class="flex items-center justify-between">
+            <h3 class="text-white font-semibold">Educational Website (Students & Mentors)</h3>
+            <span class="text-xs text-accent-1 font-semibold">2023–2024</span>
+          </div>
+          <p class="mt-3 text-gray-300">Designed and developed an interactive platform to connect students and mentors, featuring resources, communication tools and learning modules to support learning outcomes.</p>
+          <p class="mt-3 text-sm text-gray-400">Responsibilities: Front-end development, content structure, user flows, testing.</p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="p-6 glass rounded-lg border border-gray-700">
+          <div class="flex items-center justify-between">
+            <h3 class="text-white font-semibold">Counting-Strike — Math Game</h3>
+            <span class="text-xs text-accent-1 font-semibold">2023</span>
+          </div>
+          <p class="mt-3 text-gray-300">Created an interactive math game aimed at undergraduate students to enhance arithmetic skills via challenges and puzzles.</p>
+          <p class="mt-3 text-sm text-gray-400">Technologies: JavaScript / HTML5 / Game logic.</p>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="p-6 glass rounded-lg border border-gray-700">
+          <div class="flex items-center justify-between">
+            <h3 class="text-white font-semibold">AI Chatbot for Retail</h3>
+            <span class="text-xs text-accent-1 font-semibold">2024</span>
+          </div>
+          <p class="mt-3 text-gray-300">Developed an AI-powered chatbot for a retail store to improve customer service, automate common queries and streamline operations.</p>
+          <p class="mt-3 text-sm text-gray-400">Focus: Chatbot flows, integration & testing.</p>
+        </article>
+
+        <!-- Project 4 (SeaLearner) -->
+        <article class="p-6 glass rounded-lg border border-gray-700">
+          <div class="flex items-center justify-between">
+            <h3 class="text-white font-semibold">SeaLearner — Educational Platform</h3>
+            <span class="text-xs text-accent-1 font-semibold">2025</span>
+          </div>
+          <p class="mt-3 text-gray-300">SeaLearner is a next-generation educational platform focused on interactive learning, course management and mentor-student engagement. I contributed to architecture planning, front-end development and user experience improvements.</p>
+          <p class="mt-3 text-sm text-gray-400">Roles: UI/UX refinements, modular front-end components, data handling for course resources.</p>
+        </article>
+
+        <!-- Add more projects if needed -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-16">
+    <div class="glass p-6 md:p-10 rounded-lg text-center md:text-left">
+        <h2 class="text-2xl font-bold text-white mb-4">Get In Touch</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto md:mx-0">
+        Interested in collaborating or have a project you’d like help with?  
+        I’m open to internships, part-time roles, and freelance opportunities related to
+        <span class="text-accent-2">data analytics</span>, <span class="text-accent-2">web development</span>, and
+        <span class="text-accent-2">educational technology</span>.
+        </p>
+
+        <div class="mt-6 text-gray-200 space-y-2">
+        <div>
+            <strong>Email:</strong>
+            <a class="text-accent-2 hover:underline" href="mailto:yapboonsiong888@gmail.com">
+            yapboonsiong888@gmail.com
+            </a>
+        </div>
+        <div>
+            <strong>Phone:</strong>
+            <a class="hover:underline" href="tel:+60126315915">+6012-6315915</a>
+        </div>
+        <div>
+            <strong>Address:</strong>
+            B1-14, Pangsapuri Sri Kesidang, Jalan Bayan, Bandar Puchong Jaya, 47100 Puchong, Selangor
+        </div>
+        <div>
+            <strong>LinkedIn:</strong>
+            <a class="text-accent-2 hover:underline" href="#" target="_blank">Add your LinkedIn URL here</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-gray-400">
+      <div class="max-w-6xl mx-auto px-6 py-6">
+        <div class="mb-3">
+          <a class="inline-block mr-4 text-gray-300 hover:text-accent-2" href="mailto:yapboonsiong888@gmail.com">Email</a>
+          <a class="inline-block text-gray-300 hover:text-accent-2" href="https://www.linkedin.com/in/yap-boon-siong-150811331" aria-label="LinkedIn (replace)">LinkedIn</a>
+        </div>
+        <div>&copy; <span id="year"></span> Yap Boon Siong. Built with HTML & Tailwind.</div>
+      </div>
     </footer>
 
-    <!-- Simple smooth scroll script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Check if the link is just the base href
-                if (this.getAttribute('href') === '#') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    return;
-                }
-                // Check if the target element exists
-                const targetElement = document.querySelector(this.getAttribute('href'));
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  </main>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn?.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // smooth scroll behavior for internal links on older browsers
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return window.scrollTo({ top: 0, behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // hide mobile nav after click (mobile)
+        if (!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
+      });
+    });
+  </script>
 
 </body>
 </html>
